@@ -1,4 +1,16 @@
 <?php
+namespace Sah;
+
 /**
- * Model.
+ * Generic model.
  */
+class Model
+{
+    /**
+     * Do something.
+     */
+    public function do($something = ''): string
+    {
+        echo $something;
+    }
+}

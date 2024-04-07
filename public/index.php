@@ -2,4 +2,6 @@
 /**
  * Thing
  */
-echo "Thing is working";
+echo "Thing is starting ... ";
+$model = new \Sah\Model;
+$model->do("bark");
