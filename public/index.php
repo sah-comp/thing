@@ -1,7 +1,19 @@
-<?php
+<?php declare (strict_types = 1);
 /**
  * Thing
  */
-echo "Thing is starting ... ";
-$model = new \Sah\Model;
-$model->do("bark");
+
+/**
+ * Autoloader.
+ */
+require __DIR__ . '/../vendor/autoload.php';
+
+/**
+ * Construct a model.
+ */
+$model = new \Thing\Model;
+
+/**
+ * Let the model do something.
+ */
+echo $model->do("Bark, bark") . "\n";

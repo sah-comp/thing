@@ -1,16 +1,19 @@
-<?php
-namespace Sah;
+<?php declare (strict_types = 1);
+namespace Thing;
 
 /**
- * Generic model.
+ * Generic model
  */
-class Model
+final class Model
 {
     /**
      * Do something.
+     *
+     * @param string $something A string with the thing to do.
+     * @return string
      */
-    public function do($something = ''): string
+    public function do(string $something = ''): string
     {
-        echo $something;
+        return $something;
     }
 }
