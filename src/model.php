@@ -1,19 +1,23 @@
-<?php declare (strict_types = 1);
+<?php
+
+declare(strict_types=1);
+
 namespace Thing;
 
 /**
- * Generic model
+ * Generic model.
  */
 final class Model
 {
     /**
-     * Do something.
+     * Perform an action.
      *
-     * @param string $something A string with the thing to do.
+     * @param string $action The action to perform.
      * @return string
      */
-    public function do(string $something = ''): string
+    public function do(string $action = ''): string
     {
-        return $something;
+        // Optionally, add some logic here if needed.
+        return $action;
     }
 }
