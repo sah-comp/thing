@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Thing;
+namespace Thing\Model;
 
 /**
- * Generic model.
+ * Model for Node.
  */
-final class Model
+class Model extends \RedBeanPHP\SimpleModel
 {
-    /**
+	    /**
      * Perform an action.
      *
      * @param string $action The action to perform.

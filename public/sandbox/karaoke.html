@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animierter Textblock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* === FONT FACE === */
+        @font-face {
+            font-family: 'Inter';
+            src: url('/fonts/Inter-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --font-sans: 'Inter', sans-serif;
+
+            --font-size-base: clamp(1.125rem, 2.25vw, 1.25rem);
+            --font-size-lg: clamp(1.5rem, 3vw, 1.75rem);
+            --font-size-xl: clamp(2.25rem, 4vw, 2.75rem);
+
+            --line-height-base: 1.75;
+            --line-height-heading: 1.4;
+
+            --color-bg: #ffffff;
+            --color-text: #1a1a1a;
+            --color-accent: #e63946;
+            --highlight-color: #e63946;
+            --default-color: inherit;
+            --faded-opacity: 1;
+            --highlight-opacity: 1;
+
+            font-feature-settings: 'liga' 1, 'calt' 1, 'ss07' 1, 'ss08' 1;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #121212;
+                --color-text: #e0e0e0;
+                --color-accent: #4fc3f7;
+                --highlight-color: #4fc3f7;
+            }
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-base);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            margin: 0;
+            padding: 3rem 2rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 700;
+            line-height: var(--line-height-heading);
+            margin: 3rem 0 1.5rem;
+            color: var(--color-text);
+        }
+
+        h1 {
+            font-size: var(--font-size-xl);
+        }
+
+        h2 {
+            font-size: var(--font-size-lg);
+        }
+
+        p {
+            margin: 1.5rem 0;
+            max-width: 65ch;
+            letter-spacing: 0.01em;
+        }
+
+        a {
+            color: var(--color-accent);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.25em;
+            text-decoration-skip-ink: none;
+            transition: color 0.3s ease, text-decoration-thickness 0.2s ease;
+        }
+
+        a:hover {
+            text-decoration-thickness: 1.5px;
+            filter: brightness(85%);
+        }
+
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid var(--color-accent);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--color-text);
+        }
+
+        code {
+            font-family: monospace;
+            background: rgba(0, 0, 0, 0.05);
+            padding: 0.25em 0.5em;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 2rem 1.25rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .readme {
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+            max-width: 65ch;
+            margin: 0 auto;
+        }
+
+        .readme span {
+            opacity: var(--faded-opacity);
+            color: var(--default-color);
+            animation-name: highlight;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes highlight {
+            0% {
+                opacity: var(--highlight-opacity);
+                color: var(--highlight-color);
+            }
+
+            80% {
+                opacity: var(--highlight-opacity);
+                color: var(--highlight-color);
+            }
+
+            100% {
+                opacity: var(--faded-opacity);
+                color: var(--default-color);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Karaoke Animation Demo</h1>
+    <p>
+        This demo uses the <strong>Inter</strong> font and modern typography settings. Each word in the quote below is animated in sequence.
+    </p>
+    <div class="readme" id="readme">
+        <blockquote>
+            <span>The</span> <span>only</span> <span>way</span> <span>to</span> <span>do</span> <span>great</span> <span>work</span> <span>is</span> <span>to</span> <span>love</span> <span>what</span> <span>you</span> <span>do</span>.
+            <cite>— Steve Jobs</cite>
+        </blockquote>
+    </div>
+    <script>
+        // Base duration per character (in seconds)
+        const baseDuration = 0.144; // 20% faster than 0.18
+        // Minimum duration for very short words
+        const minDuration = 0.4; // 20% faster than 0.5
+
+        const spans = document.querySelectorAll('#readme span');
+        let delay = 0;
+
+        // Remove animation styles initially
+        spans.forEach(span => {
+            span.style.animation = 'none';
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            delay = 0;
+            spans.forEach(span => {
+                const wordLength = span.textContent.length;
+                const duration = Math.max(minDuration, wordLength * baseDuration);
+
+                span.style.animation = '';
+                span.style.animationDuration = duration + 's';
+                span.style.animationDelay = delay + 's';
+
+                delay += duration;
+            });
+        });
+    </script>
+</body>
+
+</html>

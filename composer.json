@@ -1,7 +1,9 @@
 {
 	"name": "sah-comp/thing",
 	"description": "Rapid application development toolkit",
-	"keywords": ["RAD"],
+	"keywords": [
+		"RAD"
+	],
 	"authors": [
 		{
 			"name": "Stephan A. Hombergs",
@@ -11,10 +13,14 @@
 		}
 	],
 	"require": {
-		"php": ">=8.2.16"
+		"php": ">=8.2.16",
+		"gabordemooij/redbean": "^5.7"
 	},
 	"autoload": {
-		"psr-4": {"Thing\\": "src/"}
+		"psr-4": {
+			"Thing\\": "src/",
+			"": "src/"
+		}
 	},
 	"require-dev": {
 		"phpunit/phpunit": "^11.1"

@@ -11,7 +11,7 @@ require __DIR__ . '/../vendor/autoload.php';
 /**
  * Construct a model.
  */
-$model = new \Thing\Model;
+$model = new \Thing\Model\Model;
 
 /**
  * Let the model do something.
