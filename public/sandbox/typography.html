@@ -3,150 +3,45 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="description" content="Responsive Typografie mit der Inter-Schriftart. Optimiert für Lesbarkeit und moderne Webgestaltung.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Self-Hosted Sans-Serif Typography</title>
-  <style>
-    /* === FONT FACE === */
-    @font-face {
-      font-family: 'Inter';
-      src: url('/fonts/Inter-Regular.woff2') format('woff2');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    /* === VARIABLES === */
-    :root {
-      --font-sans: 'Inter', sans-serif;
-
-      --font-size-base: clamp(1.125rem, 2.25vw, 1.25rem);
-      --font-size-lg: clamp(1.5rem, 3vw, 1.75rem);
-      --font-size-xl: clamp(2.25rem, 4vw, 2.75rem);
-
-      --line-height-base: 1.75;
-      --line-height-heading: 1.4;
-
-      --color-bg: #ffffff;
-      --color-text: #1a1a1a;
-      --color-accent: #005f99;
-
-
-      font-feature-settings: 'liga' 1, 'calt' 1, 'ss07' 1, 'ss08' 1;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --color-bg: #121212;
-        --color-text: #e0e0e0;
-        --color-accent: #4fc3f7;
-      }
-    }
-
-    /* === BASE === */
-    body {
-      font-family: var(--font-sans);
-      font-size: var(--font-size-base);
-      line-height: var(--line-height-base);
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      margin: 0;
-      padding: 3rem 2rem;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-weight: 700;
-      line-height: var(--line-height-heading);
-      margin: 3rem 0 1.5rem;
-      color: var(--color-text);
-    }
-
-    h1 {
-      font-size: var(--font-size-xl);
-    }
-
-    h2 {
-      font-size: var(--font-size-lg);
-    }
-
-    p {
-      margin: 1.5rem 0;
-      max-width: 65ch;
-      letter-spacing: 0.01em;
-    }
-
-    a {
-      color: var(--color-accent);
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 0.25em;
-      text-decoration-skip-ink: none;
-      transition: color 0.3s ease, text-decoration-thickness 0.2s ease;
-    }
-
-    a:hover {
-      text-decoration-thickness: 1.5px;
-      filter: brightness(85%);
-    }
-
-    blockquote {
-      font-style: italic;
-      border-left: 4px solid var(--color-accent);
-      padding-left: 1.5rem;
-      margin: 2rem 0;
-      color: var(--color-text);
-    }
-
-    code {
-      font-family: monospace;
-      background: rgba(0, 0, 0, 0.05);
-      padding: 0.25em 0.5em;
-      border-radius: 4px;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 2rem 1.25rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
+  <title>Responsive Typografie</title>
+  <link rel="stylesheet" href="default.css">
 </head>
 
 <body>
-  <h1>Self-Hosted Inter Typography</h1>
-  <p>
-    This paragraph uses the <strong>Inter</strong> sans-serif typeface. It's clean, modern, and optimized for screen
-    readability.
-    Below is a long link to demonstrate underline behavior:
-    <a href="#">very long hyperlink with descenders to confirm that the underline doesn't cut through characters like g,
-      j, or y</a>.
-  </p>
+  <header>
+        <nav>
+            <a href="index.html" class="backward">Startseite</a>
+        </nav>
+    </header>
+  <main>
+  <h1>Responsive Typografie</h1>
+    <p>
+      Dieser Absatz verwendet die <strong>Inter</strong> Sans-Serif-Schriftart. Sie ist klar, modern und für die Bildschirmlesbarkeit optimiert.
+      Unten befindet sich ein langer Link, um das Verhalten der Unterstreichung zu demonstrieren:
+      <a href="#">sehr langer Hyperlink mit Unterlängen, um zu bestätigen, dass die Unterstreichung Zeichen wie g, j oder y nicht durchschneidet</a>.
+    </p>
 
-  <h2>Dark Mode and Responsiveness</h2>
-  <p>
-    This layout adapts to your system’s color scheme and resizes gracefully on mobile screens. Inter remains legible and
-    balanced across breakpoints.
-  </p>
+    <h2>Dunkelmodus und Responsivität</h2>
+    <p>
+      Dieses Layout passt sich dem Farbschema Ihres Systems an und skaliert elegant auf mobilen Bildschirmen. Inter bleibt über alle Bildschirmgrößen hinweg lesbar und ausgewogen.
+    </p>
 
-  <h3>Typography Details</h3>
-  <p>
-    Inline code like <code>const fontReady = true;</code> is styled clearly and accessibly. Quotes below demonstrate
-    block-level formatting.
-  </p>
+    <h3>Typografie-Details</h3>
+    <p>
+      Inline-Code wie <code>const fontReady = true;</code> ist klar und zugänglich gestaltet. Die folgenden Zitate zeigen die Blockformatierung.
+    </p>
 
-  <blockquote>
-    “Typography is the craft of endowing human language with a durable visual form.” — Robert Bringhurst
-  </blockquote>
+    <blockquote>
+      Typografie ist die Kunst, der menschlichen Sprache eine dauerhafte visuelle Form zu verleihen. — Robert Bringhurst
+    </blockquote>
+  </main>
+  <footer>
+    <nav>
+      Lesen Sie hier <a href="legal.html" class="forward">Rechtliches</a>
+    </nav>
+  </footer>
 </body>
 
 </html>

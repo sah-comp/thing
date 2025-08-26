@@ -11,9 +11,14 @@ require __DIR__ . '/../vendor/autoload.php';
 /**
  * Construct a model.
  */
-$model = new \Thing\Model\Model;
+//$model = new \Thing\Model\Model;
 
 /**
  * Let the model do something.
  */
-echo $model->do("Bark, bark") . "\n";
+//echo $model->do("Bark, bark") . "\n";
+
+/**
+ * Nichts
+ */
+echo "Nichts";

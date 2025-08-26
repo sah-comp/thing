@@ -1,0 +1,89 @@
+<!-- Salut. Wenn Sie interessiert sind welches CMS oder Framework ich verwende, 
+     fragen Sie einfach. Die Antwort ist keines. Meine Internetseiten sind handgeschriebenes
+	 HTML und CSS und etwas Javascript. Für meine Zwecke ist das mehr als ausreichend.
+
+	 Ihre Anforderungen sind komplexer? Ich habe Erfahrung mit verschiedenen CMS und Frameworks.
+	 Ihre Anforderungen sind noch komplexer, aber Sie haben Bedarf für einen Berater? Schreiben Sie mir eine
+	 Mail oder vereinbaren Sie einen Rückruf.
+
+	 Das war's schon. Sehen Sie sich um.
+-->
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Stephan A. Hombergs — Freelance PHP Entwickler</title>
+	<meta name="description" content="Startseite und Übersicht von Stephan A. Hombergs, Freelance PHP Entwickler.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="default.css">
+</head>
+
+<body>
+
+	<header>
+		<nav>
+			<a href="#top" class="backward">Willkommen auf der Startseite</a>
+		</nav>
+	</header>
+	<main>
+		<h1>PHP-Entwicklung für Agenturen und Unternehmen</h1>
+		<p><span id="salutation" title="Friesisch">Moin</span>, Stephan A. Hombergs hier. Triviales <a href="sah.html">über mich.</a></p>
+		<p>Sie wollen, dass ich für Sie arbeite? Und zwar als PHP-Entwickler für <a href="work.html">webbasierte
+				Anwendungen</a> oder als
+			<a href="coop.html"><span>Feuerlöscher?</span></a> Schreiben Sie eine <a href="mailto:info@sah-company.com">Mail</a> oder vereinbaren Sie einen <a href="callback.php">Rückruf</a>.
+		</p>
+		<p class="minor">Ich arbeite bereits für Sie?
+			Und Sie haben ein dringendes Problem?<br>Rufen Sie <a href="tel:+491717911777">+49 171 7911777</a> an.
+		</p>
+	</main>
+	<aside class="minor">
+		<h2>Sandkasten</h2>
+		<p>Hier sind einige Experimente und Spielereien,
+			die ich im Rahmen meiner Arbeit erstellt habe.
+			<span class="minor">Die meisten Besucher kommen vermutlich wegen der <a href="karaoke.html">Teleprompter
+					oder <i>Karaoke Animation</i></a></span>.
+		</p>
+		<nav>
+			<ul>
+				<li><a href="karaoke.html">Teleprompter oder <i>Karaoke Animation</i></a></li>
+				<li><a href="typography.html">Responsive Typographie</a></li>
+			</ul>
+		</nav>
+	</aside>
+	<footer>
+		<nav>
+			Lesen Sie hier <a href="legal.html" class="forward">Impressum und Rechtliches</a>
+		</nav>
+	</footer>
+	<script src="default.js"></script>
+	<script>
+			const salutations = [
+				{ text: "Salut", lang: "Französisch" },
+				{ text: "Guten Tag", lang: "Deutsch" },
+				{ text: "Hallo", lang: "Deutsch" },
+				{ text: "Ahoi", lang: "Deutsch" },
+				{ text: "Moin", lang: "Friesisch" },
+				{ text: "Hey", lang: "Englisch" },
+				{ text: "Hi", lang: "Englisch" },
+				{ text: "Hola", lang: "Spanisch" },
+				{ text: "Ciao", lang: "Italienisch" },
+				{ text: "Olá", lang: "Portugiesisch" },
+				{ text: "Привет", lang: "Russisch" },
+				{ text: "こんにちは", lang: "Japanisch" },
+				{ text: "你好", lang: "Chinesisch" },
+				{ text: "안녕하세요", lang: "Koreanisch" },
+				{ text: "مرحبا", lang: "Arabisch" },
+				{ text: "Hei", lang: "Norwegisch und Finnisch" },
+				{ text: "Hej", lang: "Schwedisch und Dänisch" },
+				{ text: "Selam", lang: "Türkisch" },
+				{ text: "Shalom", lang: "Hebräisch" },
+				{ text: "Jambo", lang: "Suaheli" }
+			];
+			const random = salutations[Math.floor(Math.random() * salutations.length)];
+			document.getElementById("salutation").textContent = random.text;
+			document.getElementById("salutation").title = random.lang;
+		</script>
+</body>
+
+</html>

@@ -1,0 +1,401 @@
+/**
+ * Custom CSS styles for the website sah-company.com
+ */
+@font-face {
+	font-family: 'Inter';
+	src: url('/../fonts/Inter-Regular.woff2') format('woff2');
+	/*src: url('./fonts/Inter-Regular.woff2') format('woff2');*/
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	--font-sans: 'Inter', sans-serif;
+	--font-size-base: clamp(1.125rem, 2.25vw, 1.25rem);
+	--font-size-lg: clamp(1.5rem, 3vw, 1.75rem);
+	--font-size-xl: clamp(2.25rem, 4vw, 2.75rem);
+	--line-height-base: 1.75;
+	--line-height-heading: 1.4;
+	--color-bg: #ffffff;
+	--color-text: #1a1a1a;
+	--color-accent: #e63946;
+
+	/*--highlight-color: #e63946;*/
+	--highlight-color: #1068af;
+	--default-color: inherit;
+	--faded-opacity: 1;
+	--highlight-opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-bg: #121212;
+		--color-text: #e0e0e0;
+		--color-accent: #4fc3f7;
+	}
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-family: var(--font-sans);
+	font-size: var(--font-size-base);
+	line-height: var(--line-height-base);
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	margin: 0;
+	padding: 3rem 2rem;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+h1,
+h2,
+h3 {
+	font-weight: 700;
+	line-height: var(--line-height-heading);
+	margin: 3rem 0 1.5rem;
+	color: var(--color-text);
+}
+
+h1 {
+	font-size: var(--font-size-xl);
+}
+
+h2 {
+	font-size: var(--font-size-lg);
+}
+
+p {
+	margin: 1.5rem 0;
+	max-width: 65ch;
+	letter-spacing: 0.01em;
+}
+
+a {
+	color: var(--color-accent);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.25em;
+	text-decoration-skip-ink: none;
+	transition: color 0.3s ease, text-decoration-thickness 0.2s ease;
+}
+
+a:hover {
+	text-decoration-thickness: 1.5px;
+	filter: brightness(85%);
+}
+
+.forward,
+.backward {
+	text-decoration: none;
+	color: inherit;
+}
+
+a.forward::after {
+	content: " ⟶";
+}
+
+a.backward::before {
+	content: "⟵ ";
+}
+
+blockquote {
+	font-style: italic;
+	border-left: 4px solid var(--color-accent);
+	padding-left: 1.5rem;
+	margin: 2rem 0 2rem 2rem;
+	color: var(--color-text);
+}
+
+code {
+	font-family: monospace;
+	background: rgba(0, 0, 0, 0.05);
+	padding: 0.25em 0.5em;
+	border-radius: 4px;
+}
+
+/* 
+	Media query targeting screens with a maximum width of 600px.
+	Typically used to apply responsive styles for mobile devices,
+	ensuring layout and elements adapt for smaller screens.
+*/
+@media (max-width: 600px) {
+	body {
+		padding: 2rem 1.25rem;
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+}
+
+footer {
+	flex-shrink: 0;
+	margin-top: 3rem;
+	padding-bottom: 1rem;
+	font-size: 0.95rem;
+	color: #888;
+	text-align: center;
+	width: 100%;
+}
+
+main footer nav {
+	font-size: 0.6rem;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--highlight-color: #ef4ff7;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.readme span {
+		animation: none !important;
+		transition: none !important;
+	}
+}
+
+.readme {
+	/*font-size: var(--font-size-lg);*/
+	line-height: 1.8;
+	max-width: 65ch;
+}
+
+.readme span {
+	opacity: var(--faded-opacity);
+	color: var(--default-color);
+	animation-name: highlight;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	transition: text-shadow 0.3s;
+}
+
+.readme span.emphasized {
+	font-weight: bold;
+}
+
+@keyframes highlight {
+	0% {
+		opacity: var(--highlight-opacity);
+		color: var(--highlight-color);
+		text-shadow: 0 0 0px var(--highlight-color), 0 0 0px #fff;
+	}
+
+	30% {
+		opacity: var(--highlight-opacity);
+		color: var(--highlight-color);
+		text-shadow: 0 0 2px var(--highlight-color), 0 0 10px #fff;
+	}
+
+	80% {
+		opacity: var(--highlight-opacity);
+		color: var(--highlight-color);
+		text-shadow: 0 0 4px var(--highlight-color), 0 0 18px #fff;
+	}
+
+	100% {
+		opacity: var(--faded-opacity);
+		color: var(--default-color);
+		text-shadow: none;
+	}
+}
+
+.tip {
+	display: block;
+	background: #fafafa;
+	border-left: 2px solid var(--color-accent);
+	padding: 0.75rem 1rem;
+	margin: 1.5rem 0;
+	font-size: 0.8rem;
+	color: #555;
+	box-shadow: none;
+	border-radius: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+	.tip {
+		background: #1a1a1a;
+		color: #ccc;
+		border-left-color: var(--color-accent);
+	}
+}
+
+.minor {
+	font-size: 0.85rem;
+	color: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+	.minor {
+		color: #aaa;
+	}
+}
+
+a.obscure {
+	color: inherit;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+
+a.obscure:hover,
+a.obscure:active {
+	color: var(--color-accent);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.25em;
+}
+
+/*
+ * form
+ */
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+	width: 32em;
+	margin: 2rem 0;
+}
+
+/* 
+	Media query targeting screens with a maximum width of 600px.
+	Typically used to apply responsive styles for mobile devices,
+	ensuring layout and elements adapt for smaller screens.
+*/
+@media (max-width: 600px) {
+	form {
+		width: 100%;
+	}
+}
+
+label {
+	font-size: 1rem;
+	font-weight: 500;
+	margin-bottom: -0.8rem;
+	/* margin-left matches input's font-size for 1em = input font-size */
+	margin-left: 0.666rem;
+	line-height: 1;
+	color: var(--color-text);
+	cursor: pointer;
+}
+
+input,
+textarea,
+select {
+	font-family: var(--font-sans);
+	font-size: var(--font-size-base);
+	line-height: var(--line-height-base);
+	color: var(--color-text);
+	background: #f7f7f7;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	padding: 0.666rem 1rem;
+	margin-bottom: 0.5rem;
+	margin-top: 0rem;
+	transition: border-color 0.2s, background 0.2s;
+	box-sizing: border-box;
+}
+
+textarea {
+	width: 100%;
+	max-width: 100%;
+	min-width: 100%;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+	border-color: var(--color-accent);
+	background: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+
+	input,
+	textarea,
+	select {
+		/*background: #222;*/
+		background: #181818;
+		color: var(--color-text);
+		border-color: #444;
+	}
+
+	input:focus,
+	textarea:focus,
+	select:focus {
+		background: #181818;
+		border-color: var(--color-accent);
+	}
+}
+
+.button-forward {
+	font-family: var(--font-sans);
+	font-size: var(--font-size-base);
+	font-weight: 600;
+	color: var(--color-accent);
+	background: none;
+	border: none;
+	padding: 0.75em 1.5em;
+	cursor: pointer;
+	text-decoration: none;
+	transition: color 0.3s, text-decoration-thickness 0.2s;
+}
+
+.button-forward::after {
+	content: " ⟶";
+}
+
+.button-forward {
+	animation: none !important;
+	transition: color 0.3s, text-decoration-thickness 0.2s !important;
+}
+
+.button-forward:hover,
+.button-forward:focus {
+	color: var(--highlight-color);
+	text-decoration-thickness: 1.5px;
+	filter: brightness(85%);
+}
+
+pre {
+	font-family: monospace;
+	font-size: 0.777em;
+	background: rgba(0, 0, 0, 0.06);
+	color: #333;
+	padding: 1em 1.25em;
+	border-radius: 6px;
+	overflow-x: auto;
+	margin: 1.5rem 0;
+	line-height: 1.6;
+	max-width: 100%;
+}
+
+hr {
+	margin: 4rem auto;
+	border: none;
+	border-top: 2px solid var(--color-accent);
+	width: 3rem;
+}
+
+@media (prefers-color-scheme: dark) {
+	pre {
+		background: #181818;
+		color: #e0e0e0;
+	}
+}
