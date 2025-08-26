@@ -29,7 +29,8 @@ class NodeTest extends TestCase
     {
         // Only setup the database if not already setup
         if (!R::testConnection()) {
-            R::setup('mysql:host=localhost;dbname=testthing', 'root', 'elo58JiTs3_');
+            $config = require __DIR__ . '/testconfig.php';
+            R::setup($config['dsn'], $config['user'], $config['pass']);
         }
         R::nuke(); // Clear the database
     }

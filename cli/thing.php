@@ -22,8 +22,9 @@ require_once __DIR__ . '/../vendor/autoload.php'; // Adjust path if needed
 // Database connection
 //with namespace Model
 define('REDBEAN_MODEL_PREFIX', '\\Thing\\Model\\');
-// Setup RedBeanPHP with MySQL database (uncomment if needed)
-R::setup('mysql:host=localhost;dbname=thing', 'root', 'elo58JiTs3_');
+// Configuration
+$config = require __DIR__ . '/config.php';
+R::setup($config['dsn'], $config['user'], $config['pass']);
 R::freeze(FALSE);
 // Setup RedBeanPHP SQLite database in the same directory
 //R::setup('sqlite:' . __DIR__ . '/nodes.db');

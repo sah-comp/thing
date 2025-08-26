@@ -29,6 +29,26 @@ function playAnimation() {
 		delay += duration;
 	});
 }
+function isReadmeVisible() {
+	const readme = document.querySelector('.readme');
+	if (!readme) return false;
+	const rect = readme.getBoundingClientRect();
+	return (
+		rect.top < window.innerHeight &&
+		rect.bottom > 0
+	);
+}
 
+let animationStarted = false;
+
+function onScrollOrResize() {
+	if (!animationStarted && isReadmeVisible()) {
+		animationStarted = true;
+		playAnimation();
+	}
+}
+
+window.addEventListener('scroll', onScrollOrResize);
+window.addEventListener('resize', onScrollOrResize);
 window.addEventListener('DOMContentLoaded', playAnimation);
 

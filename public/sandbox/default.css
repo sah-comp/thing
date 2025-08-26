@@ -80,13 +80,17 @@ p {
 	margin: 1.5rem 0;
 	max-width: 65ch;
 	letter-spacing: 0.01em;
+	hyphens: auto;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	word-break: break-word;
 }
 
 a {
 	color: var(--color-accent);
 	text-decoration: underline;
 	text-decoration-thickness: 1px;
-	text-underline-offset: 0.25em;
+	text-underline-offset: 0.30em;
 	text-decoration-skip-ink: none;
 	transition: color 0.3s ease, text-decoration-thickness 0.2s ease;
 }
