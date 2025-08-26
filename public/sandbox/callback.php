@@ -31,7 +31,7 @@
     <input type="tel" id="phone" name="phone" required pattern="[0-9+\s\-]+" placeholder="+49 123 4567890" tabindex="2">
 
   <label for="date">Bevorzugtes Datum</label>
-    <input type="text" id="date" name="date" required placeholder="TT.MM.JJJJ" pattern="^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.(19|20)\d\d$" tabindex="3">
+    <input type="date" id="date" name="date" required placeholder="TT.MM.JJJJ" pattern="^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.(19|20)\d\d$" tabindex="3">
 
   <label for="time">Bevorzugte Rückrufzeit</label>
     <input type="text" id="time" name="time" placeholder="z.B. 14:00 - 16:00 Uhr" tabindex="4">
@@ -45,7 +45,7 @@
   </main>
   <footer>
     <nav>
-      Lesen Sie hier <a href="legal.html" class="forward">Rechtliches</a>
+      Lesen Sie hier <a href="legal.html" class="forward">Impressum und Rechtliches</a>
     </nav>
   </footer>
 <script>
