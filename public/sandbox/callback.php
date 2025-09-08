@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <meta charset="UTF-8" />
@@ -9,12 +9,12 @@
 </head>
 
 <body>
-  <header>
-    <nav>
+  <header role="banner">
+    <nav role="navigation">
       <a href="index.html" class="backward">Startseite</a>
     </nav>
   </header>
-  <main>
+  <main role="main">
     <h1>Rückruf vereinbaren</h1>
     <p>Füllen Sie das Formular aus, um einen Rückruf zu vereinbaren. Ich melde mich zum gewählten Zeitpunkt.</p>
     <?php
@@ -31,6 +31,31 @@
         echo '<h2>Ungültige oder abgelaufene Anfrage (CSRF-Schutz).</h2>';
       } else {
         $name = htmlspecialchars(trim($_POST['name'] ?? ''), ENT_QUOTES, 'UTF-8');
+
+        // Validate date and time are not before now
+        $dateInput = trim($_POST['date'] ?? '');
+        $timeInput = trim($_POST['time'] ?? '');
+        $dateTimeValid = true;
+
+        if ($dateInput) {
+          // If time is provided, combine date and time, else use date only
+          $dateTimeStr = $dateInput;
+          if ($timeInput) {
+            // Try to extract a time (e.g. "14:00" from "14:00 - 16:00 Uhr")
+            if (preg_match('/(\d{1,2}:\d{2})/', $timeInput, $matches)) {
+              $dateTimeStr .= ' ' . $matches[1];
+            }
+          }
+          $userDateTime = strtotime($dateTimeStr);
+          if ($userDateTime === false || $userDateTime < time()) {
+            $dateTimeValid = false;
+          }
+        }
+
+        if (!$dateTimeValid) {
+          echo '<h2>Das gewählte Datum und die Uhrzeit dürfen nicht in der Vergangenheit liegen.</h2>';
+          return;
+        }
         $phone = htmlspecialchars(trim($_POST['phone'] ?? ''), ENT_QUOTES, 'UTF-8');
         $date = htmlspecialchars(trim($_POST['date'] ?? ''), ENT_QUOTES, 'UTF-8');
         $time = htmlspecialchars(trim($_POST['time'] ?? ''), ENT_QUOTES, 'UTF-8');
@@ -69,30 +94,30 @@
       }
       $nonce = $_SESSION['callback_nonce'];
     ?>
-      <form action="callback.php" method="post" class="callback-form" accept-charset="UTF-8">
+  <form action="callback.php" method="post" class="callback-form" accept-charset="UTF-8" role="form">
         <label for="name">Ihr Name</label>
-        <input type="text" id="name" name="name" required placeholder="Max Mustermann" tabindex="1">
+        <input type="text" id="name" name="name" required placeholder="Max Mustermann" tabindex="0">
 
         <label for="phone">Telefonnummer</label>
-        <input type="tel" id="phone" name="phone" required pattern="[0-9+\s\-]+" placeholder="+49 123 4567890" tabindex="2">
+        <input type="tel" id="phone" name="phone" required pattern="[0-9+\s\-]+" placeholder="+49 123 4567890" tabindex="0">
 
         <label for="date">Bevorzugtes Datum</label>
-        <input type="date" id="date" name="date" required placeholder="TT.MM.JJJJ" pattern="^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.(19|20)\d\d$" tabindex="3">
+        <input type="date" id="date" name="date" required placeholder="TT.MM.JJJJ" pattern="^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.(19|20)\d\d$" tabindex="0">
 
         <label for="time">Bevorzugte Rückrufzeit</label>
-        <input type="text" id="time" name="time" placeholder="z.B. 14:00 - 16:00 Uhr" tabindex="4">
+        <input type="text" id="time" name="time" placeholder="z.B. 14:00 - 16:00 Uhr" tabindex="0">
 
         <label for="message">Kurze Nachricht</label>
-        <textarea id="message" name="message" rows="3" maxlength="300" placeholder="Ihre Nachricht (optional)" tabindex="5"></textarea>
+        <textarea id="message" name="message" rows="3" maxlength="300" placeholder="Ihre Nachricht (optional)" tabindex="0"></textarea>
 
         <input type="hidden" name="callback_nonce" value="<?php echo htmlspecialchars($nonce); ?>">
-        <button class="button-forward" type="submit" tabindex="6">Rückruf anfordern</button>
+        <button class="button-forward" type="submit" tabindex="0">Rückruf anfordern</button>
       </form>
     <?php }
     ?>
   </main>
-  <footer>
-    <nav>
+  <footer role="contentinfo">
+    <nav role="navigation">
       <a href="legal.html" class="forward">Lesen Sie hier Impressum und Rechtliches</a>
     </nav>
   </footer>

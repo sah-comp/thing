@@ -24,10 +24,7 @@
 	/*--highlight-color: #e63946;*/
 	--highlight-color: #1068af;
 	--default-color: inherit;
-	--faded-opacity: 1;
-	--highlight-opacity: 1;
 }
-
 @media (prefers-color-scheme: dark) {
 	:root {
 		--color-bg: #121212;
@@ -145,6 +142,10 @@ code {
 
 	h2 {
 		font-size: 1.5rem;
+	}
+
+	aside {
+		font-size: 0.9rem;
 	}
 }
 

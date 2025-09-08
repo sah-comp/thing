@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Thing\Model;
 
 /**
- * Model for Node.
+ * Node model
  */
 class Node extends \RedBeanPHP\SimpleModel
 {

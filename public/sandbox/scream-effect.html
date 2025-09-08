@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Schrei-Effekt Demo</title>
+	<meta name="description" content="Demonstration eines visuellen Effekts für geschriene Wörter.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="default.css">
+	<style>
+		.scream {
+			font-size: 1.2rem;
+			font-weight: 500;
+			color: #222;
+			letter-spacing: 0;
+			text-transform: none;
+			font-family: 'Inter', sans-serif;
+			text-shadow: none;
+			border-radius: 12px;
+			background: none;
+			padding: 0.25em 0.5em;
+			animation: friendly-grow 1.2s cubic-bezier(.36, .07, .19, .97) 1;
+			transition: all 0.5s;
+			display: inline-block;
+			min-width: 10ch;
+			text-align: center;
+			line-height: 2.5rem;
+			height: 2.5rem;
+		}
+
+		@keyframes friendly-grow {
+			0% {
+				transform: scale(1);
+				font-weight: 500;
+				color: #222;
+				letter-spacing: 0;
+				text-transform: none;
+				text-shadow: none;
+				background: none;
+			}
+
+			40% {
+				transform: scale(1.15);
+				font-weight: 700;
+				color: #4fc3f7;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				text-shadow: 0 2px 8px #b3e5fc;
+				background: rgba(79, 195, 247, 0.04);
+			}
+
+			80% {
+				transform: scale(1.25);
+				font-weight: 700;
+				color: #4fc3f7;
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+				text-shadow: 0 2px 12px #b3e5fc, 0 0 2px #fff;
+				background: rgba(79, 195, 247, 0.08);
+			}
+
+			100% {
+				transform: scale(1);
+				font-weight: 500;
+				color: #222;
+				letter-spacing: 0;
+				text-transform: none;
+				text-shadow: none;
+				background: none;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<a href="index.html" class="backward">Startseite</a>
+		</nav>
+	</header>
+	<main>
+		<h1>Schrei-Effekt Demo</h1>
+		<p>
+			So sieht es aus, wenn Wörter
+			<span style="position: relative;">
+				<span style="visibility: hidden;"
+					id="screamword-space">angesprochen</span>
+				<span id="screamword"
+					style="position: absolute; left: 0; top: 0; width: 100%; display: inline-block; text-align: center;">angesprochen</span>
+			</span>
+
+			werden:
+		</p>
+		<p>Sie können diesen Effekt für Warnungen, Fehler oder besondere Hinweise verwenden.</p>
+	</main>
+	<footer>
+		<nav>
+			<a href="legal.html" class="forward">Lesen Sie hier Impressum und Rechtliches</a>
+		</nav>
+	</footer>
+	<script src="default.js"></script>
+	<script>
+		window.addEventListener('DOMContentLoaded', function () {
+			var word = document.getElementById('screamword');
+			setTimeout(function () {
+				word.classList.add('scream');
+				word.textContent = 'ANGESPROCHEN!';
+				setTimeout(function () {
+					word.classList.remove('scream');
+					word.textContent = 'angesprochen';
+				}, 1400); // duration of animation
+			}, 500);
+		});
+	</script>
+</body>
+
+</html>

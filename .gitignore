@@ -1,5 +1,5 @@
 cli/config.php
-tests/testconfig.php
+tests_config.php
 vendor/
 tmp/
 docs/

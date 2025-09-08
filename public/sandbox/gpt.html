@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stephan A. Hombergs – Freelance PHP-Entwickler</title>
+  <meta name="description" content="Freelance PHP-Entwickler für Agenturen und Unternehmen: Laravel, Symfony, WordPress, APIs, Performance & Wartung. Transparent, zuverlässig, lösungsorientiert." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta property="og:title" content="Freelance PHP-Entwickler – Stephan A. Hombergs" />
+  <meta property="og:description" content="Webentwicklung mit PHP: Laravel, Symfony, WordPress, APIs. Für Agenturen & Unternehmen." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta property="og:url" content="https://example.com" />
+  <link rel="icon" href="/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa',
+              500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a'
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* sanfte Scroll-Animationen */
+    html { scroll-behavior: smooth; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Stephan A. Hombergs",
+    "jobTitle": "Freelance PHP-Entwickler",
+    "url": "https://example.com",
+    "image": "https://example.com/portrait.jpg",
+    "knowsAbout": ["PHP", "Laravel", "Symfony", "WordPress", "APIs", "Performanceoptimierung"],
+    "worksFor": {"@type": "Organization", "name": "Selbstständig"},
+    "email": "mailto:hallo@example.com",
+    "telephone": "+49-170-0000000"
+  }
+  </script>
+</head>
+<body class="bg-white text-slate-800">
+  <!-- Top Bar -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/75 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <a href="#home" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-2xl bg-brand-600 flex items-center justify-center text-white font-bold">SH</div>
+          <span class="font-semibold tracking-tight">Stephan A. Hombergs</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a href="#leistungen" class="hover:text-brand-700">Leistungen</a>
+          <a href="#referenzen" class="hover:text-brand-700">Referenzen</a>
+          <a href="#ueber" class="hover:text-brand-700">Über mich</a>
+          <a href="#kontakt" class="hover:text-brand-700">Kontakt</a>
+          <a href="#kontakt" class="inline-flex items-center gap-2 bg-brand-600 text-white px-4 py-2 rounded-xl shadow-sm hover:bg-brand-700 transition">
+            <span>Projekt anfragen</span>
+          </a>
+        </nav>
+        <button aria-label="Menü öffnen" class="md:hidden p-2 rounded-xl border border-slate-300" id="menuBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileNav" class="md:hidden hidden border-t border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
+        <a href="#leistungen" class="py-2">Leistungen</a>
+        <a href="#referenzen" class="py-2">Referenzen</a>
+        <a href="#ueber" class="py-2">Über mich</a>
+        <a href="#kontakt" class="py-2">Kontakt</a>
+        <a href="#kontakt" class="inline-flex items-center justify-center gap-2 bg-brand-600 text-white px-4 py-2 rounded-xl shadow-sm hover:bg-brand-700 transition mt-2">
+          <span>Projekt anfragen</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-50 to-white pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto px-4 py-20 lg:py-28 relative">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-brand-700 bg-brand-100 px-3 py-1 rounded-full">Verfügbar für Agenturen</p>
+          <h1 class="mt-4 text-4xl/tight md:text-5xl/tight font-extrabold tracking-tight">
+            Freelance <span class="text-brand-700">PHP‑Entwickler</span> für individuelle Weblösungen
+          </h1>
+          <p class="mt-5 text-slate-600 text-lg">
+            Ich unterstütze Agenturen und Unternehmen bei Entwicklung, Erweiterung und Wartung von Webprojekten – zuverlässig, transparent und lösungsorientiert.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#kontakt" class="inline-flex items-center gap-2 bg-brand-600 text-white px-5 py-3 rounded-2xl shadow hover:bg-brand-700 transition">
+              <span>Projekt anfragen</span>
+            </a>
+            <a href="#referenzen" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl border border-slate-300 hover:bg-slate-50">
+              <span>Referenzen ansehen</span>
+            </a>
+          </div>
+          <ul class="mt-6 text-sm text-slate-600 grid grid-cols-2 gap-2 max-w-lg">
+            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-brand-600 rounded-full"></span>Laravel · Symfony · WordPress</li>
+            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-brand-600 rounded-full"></span>API-Entwicklung & Integration</li>
+            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-brand-600 rounded-full"></span>Performance & Troubleshooting</li>
+            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-brand-600 rounded-full"></span>Wartung & Retainer</li>
+          </ul>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/3] rounded-3xl border border-slate-200 shadow-sm overflow-hidden bg-white">
+            <div class="h-full w-full grid grid-cols-2">
+              <div class="p-6 border-r border-slate-100 flex flex-col gap-4">
+                <div class="text-xs font-semibold text-slate-500">Stack</div>
+                <ul class="text-sm space-y-2">
+                  <li class="flex items-center justify-between">
+                    <span>PHP 8.x</span><span class="text-brand-700 font-semibold">Pro</span>
+                  </li>
+                  <li class="flex items-center justify-between">
+                    <span>Laravel</span><span class="text-brand-700 font-semibold">Pro</span>
+                  </li>
+                  <li class="flex items-center justify-between">
+                    <span>Symfony</span><span class="text-slate-600">Erfahren</span>
+                  </li>
+                  <li class="flex items-center justify-between">
+                    <span>WordPress</span><span class="text-slate-600">Erfahren</span>
+                  </li>
+                  <li class="flex items-center justify-between">
+                    <span>REST & GraphQL</span><span class="text-slate-600">Erfahren</span>
+                  </li>
+                </ul>
+                <div class="mt-auto text-xs text-slate-500">Letzte Aktualisierung: <span id="lastUpdated"></span></div>
+              </div>
+              <div class="p-6 flex flex-col gap-4">
+                <div class="text-xs font-semibold text-slate-500">Was Sie erwartet</div>
+                <ul class="text-sm list-disc list-inside space-y-2">
+                  <li>Klares Angebot & transparente Kommunikation</li>
+                  <li>Sauberer, getesteter Code & Reviews</li>
+                  <li>Termintreue & verlässliche Zusammenarbeit</li>
+                </ul>
+                <div class="mt-4 grid grid-cols-3 gap-3 text-center">
+                  <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="text-2xl font-extrabold">8+</div>
+                    <div class="text-xs text-slate-500">Jahre Erfahrung</div>
+                  </div>
+                  <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="text-2xl font-extrabold">40+</div>
+                    <div class="text-xs text-slate-500">Projekte</div>
+                  </div>
+                  <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="text-2xl font-extrabold"><span class="align-middle">\u2728</span></div>
+                    <div class="text-xs text-slate-500">Top Bewertungen</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leistungen -->
+  <section id="leistungen" class="py-20 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-extrabold tracking-tight">Leistungen</h2>
+        <p class="mt-3 text-slate-600">Von der Idee bis zum Rollout – modular buchbar, klar kalkulierbar.</p>
+      </div>
+      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card -->
+        <article class="p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="text-sm font-semibold text-brand-700">Entwicklung</div>
+          <h3 class="mt-1 font-semibold">Individuelle Webanwendungen</h3>
+          <p class="mt-2 text-sm text-slate-600">Laravel/Symfony-basierte Anwendungen, saubere Architektur, automatisierte Tests.</p>
+          <ul class="mt-4 text-sm list-disc list-inside space-y-1 text-slate-600">
+            <li>DDD, SOLID, Clean Code</li>
+            <li>CI/CD & automatisierte Deployments</li>
+            <li>Mehrsprachigkeit, Rollen & Rechte</li>
+          </ul>
+        </article>
+        <article class="p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="text-sm font-semibold text-brand-700">Integrationen</div>
+          <h3 class="mt-1 font-semibold">APIs & Schnittstellen</h3>
+          <p class="mt-2 text-sm text-slate-600">Planung, Dokumentation und Implementierung robuster REST/GraphQL-Schnittstellen.</p>
+          <ul class="mt-4 text-sm list-disc list-inside space-y-1 text-slate-600">
+            <li>OAuth2, JWT, Webhooks</li>
+            <li>Drittanbieter: Stripe, HubSpot, etc.</li>
+            <li>Monitoring & Observability</li>
+          </ul>
+        </article>
+        <article class="p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="text-sm font-semibold text-brand-700">Optimierung</div>
+          <h3 class="mt-1 font-semibold">Performance & Skalierung</h3>
+          <p class="mt-2 text-sm text-slate-600">Schneller machen, stabil halten: Caching, Queues, Query-Tuning, Profiling.</p>
+          <ul class="mt-4 text-sm list-disc list-inside space-y-1 text-slate-600">
+            <li>Redis, Horizon, Octane</li>
+            <li>MySQL/PostgreSQL Performance</li>
+            <li>Blackfire, XHProf</li>
+          </ul>
+        </article>
+        <article class="p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="text-sm font-semibold text-brand-700">CMS</div>
+          <h3 class="mt-1 font-semibold">WordPress-Entwicklung</h3>
+          <p class="mt-2 text-sm text-slate-600">Headless oder klassisch: Themes, Plugins, Gutenberg-Blöcke, ACF.</p>
+          <ul class="mt-4 text-sm list-disc list-inside space-y-1 text-slate-600">
+            <li>Saubere, update-feste Lösungen</li>
+            <li>WooCommerce & Schnittstellen</li>
+            <li>SEO‑freundliche Strukturen</li>
+          </ul>
+        </article>
+        <article class="p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="text-sm font-semibold text-brand-700">Service</div>
+          <h3 class="mt-1 font-semibold">Wartung & Betreuung</h3>
+          <p class="mt-2 text-sm text-slate-600">Regelmäßige Updates, Security‑Patches, Monitoring & Support-SLAs.</p>
+          <ul class="mt-4 text-sm list-disc list-inside space-y-1 text-slate-600">
+            <li>Incident Response („Feuerlöscher“)</li>
+            <li>Monatliche Retainer-Pakete</li>
+            <li>Reporting & Roadmaps</li>
+          </ul>
+        </article>
+        <article class="p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="text-sm font-semibold text-brand-700">Zusammenarbeit</div>
+          <h3 class="mt-1 font-semibold">Prozesse & Qualität</h3>
+          <p class="mt-2 text-sm text-slate-600">Planbar & transparent: Ticketing, Estimations, Reviews, Definition of Done.</p>
+          <ul class="mt-4 text-sm list-disc list-inside space-y-1 text-slate-600">
+            <li>Git-Flow, Code Reviews</li>
+            <li>Scrum/Kanban, Jira/Linear</li>
+            <li>Saubere Dokumentation</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Referenzen -->
+  <section id="referenzen" class="py-20 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-end justify-between gap-6">
+        <div>
+          <h2 class="text-3xl font-extrabold tracking-tight">Referenzen</h2>
+          <p class="mt-3 text-slate-600">Eine Auswahl aktueller Arbeiten. Weitere Beispiele gern auf Anfrage.</p>
+        </div>
+        <a href="#kontakt" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-50">Projekt besprechen</a>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Portfolio Card Template -->
+        <article class="group rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+          <div class="aspect-[16/10] bg-gradient-to-br from-slate-100 to-slate-50 grid place-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10 opacity-50"><path fill="currentColor" d="M3 5a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v2H3V5zm0 6h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8zm4 2v2h10v-2H7z"/></svg>
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">B2B Kundenportal (Laravel)</h3>
+            <p class="mt-2 text-sm text-slate-600">Kompaktes Portal mit Rollen & Rechten, Import/Export, Audit-Logs, CI/CD.</p>
+            <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
+              <span>Laravel · MySQL · Redis</span>
+              <a href="#" class="group-hover:text-brand-700">Details</a>
+            </div>
+          </div>
+        </article>
+        <article class="group rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+          <div class="aspect-[16/10] bg-gradient-to-br from-slate-100 to-slate-50 grid place-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10 opacity-50"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9H12V3z"/></svg>
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">Headless WordPress</h3>
+            <p class="mt-2 text-sm text-slate-600">Redaktionelles System mit REST-API, Custom Post Types, Gutenberg-Blöcken.</p>
+            <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
+              <span>WordPress · REST · Next.js</span>
+              <a href="#" class="group-hover:text-brand-700">Details</a>
+            </div>
+          </div>
+        </article>
+        <article class="group rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+          <div class="aspect-[16/10] bg-gradient-to-br from-slate-100 to-slate-50 grid place-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10 opacity-50"><path fill="currentColor" d="M4 6h16v2H4zm0 5h16v2H4zm0 5h10v2H4z"/></svg>
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">API‑Integrationen</h3>
+            <p class="mt-2 text-sm text-slate-600">Stripe, HubSpot & interne Systeme, sichere Auth, Webhooks, Observability.</p>
+            <div class="mt-4 flex items-center justify-between text-xs text-slate-500">
+              <span>Laravel · Stripe · Sentry</span>
+              <a href="#" class="group-hover:text-brand-700">Details</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Über mich -->
+  <section id="ueber" class="py-20 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-3 gap-10 items-start">
+      <div class="lg:col-span-2">
+        <h2 class="text-3xl font-extrabold tracking-tight">Über mich</h2>
+        <p class="mt-4 text-slate-700">Ich bin Stephan A. Hombergs, Freelance PHP‑Entwickler aus Deutschland. Ich arbeite bevorzugt mit Agenturen als verlängerter Development‑Arm: sauber strukturiert, dokumentiert und eng abgestimmt. Qualität und Termintreue stehen dabei immer an erster Stelle.</p>
+        <p class="mt-4 text-slate-700">Technischer Schwerpunkt: <strong>Laravel/Symfony</strong> im Backend, <strong>moderne Frontends</strong> via API sowie <strong>WordPress</strong> für Content‑Projekte. Ich liefere verständliche Roadmaps, feste Milestones und transparente Kommunikation.</p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="p-5 rounded-2xl border border-slate-200">
+            <div class="text-sm font-semibold text-slate-500">Arbeitsweise</div>
+            <ul class="mt-2 text-sm text-slate-700 list-disc list-inside space-y-1">
+              <li>Kickoff & Scope-Definition</li>
+              <li>Iterative Entwicklung (Scrum/Kanban)</li>
+              <li>Reviews, Tests & Dokus</li>
+            </ul>
+          </div>
+          <div class="p-5 rounded-2xl border border-slate-200">
+            <div class="text-sm font-semibold text-slate-500">Tools</div>
+            <ul class="mt-2 text-sm text-slate-700 list-disc list-inside space-y-1">
+              <li>GitHub/GitLab · CI/CD</li>
+              <li>Jira/Linear · Notion</li>
+              <li>Docker · Make · Fly.io</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <aside class="lg:col-span-1">
+        <div class="p-6 rounded-2xl border border-slate-200 sticky top-24">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-2xl bg-slate-200 overflow-hidden">
+              <!-- Platz für Portraitbild -->
+              <img src="portrait.jpg" alt="Portrait von Stephan A. Hombergs" class="w-full h-full object-cover" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <div class="font-semibold">Stephan A. Hombergs</div>
+              <div class="text-sm text-slate-600">Freelance PHP‑Entwickler</div>
+            </div>
+          </div>
+          <div class="mt-4 text-sm text-slate-600">
+            Standort: Deutschland · Remote & vor Ort (nach Absprache)
+          </div>
+          <div class="mt-4 flex flex-col gap-2">
+            <a href="#kontakt" class="inline-flex items-center justify-center gap-2 bg-brand-600 text-white px-4 py-2 rounded-xl hover:bg-brand-700">Verfügbarkeit anfragen</a>
+            <a href="Stephan-Hombergs-CV.pdf" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-50">CV herunterladen</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt" class="py-20 border-t border-slate-200 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="text-3xl font-extrabold tracking-tight">Kontakt</h2>
+          <p class="mt-3 text-slate-600">Erzählen Sie kurz von Ihrem Vorhaben – ich melde mich zeitnah mit Rückfragen oder einem Vorschlag für das weitere Vorgehen.</p>
+          <div class="mt-6 p-5 rounded-2xl border border-slate-200 bg-white">
+            <div class="text-sm font-semibold text-slate-500">Direktkontakt</div>
+            <ul class="mt-2 text-sm text-slate-700 space-y-1">
+              <li>E‑Mail: <a class="text-brand-700 hover:underline" href="mailto:hallo@example.com">hallo@example.com</a></li>
+              <li>Telefon: <a class="text-brand-700 hover:underline" href="tel:+491700000000">+49 170 0000000</a></li>
+              <li>Notfall („Feuerlöscher“): <a class="text-brand-700 hover:underline" href="tel:+491700000000">+49 170 0000000</a></li>
+            </ul>
+          </div>
+        </div>
+        <form class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm" onsubmit="handleSubmit(event)">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm font-medium" for="name">Name</label>
+              <input id="name" name="name" required class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" />
+            </div>
+            <div>
+              <label class="text-sm font-medium" for="email">E‑Mail</label>
+              <input id="email" type="email" name="email" required class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" />
+            </div>
+            <div class="sm:col-span-2">
+              <label class="text-sm font-medium" for="projekt">Projekt / Anliegen</label>
+              <input id="projekt" name="projekt" placeholder="Kurzbeschreibung" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" />
+            </div>
+            <div class="sm:col-span-2">
+              <label class="text-sm font-medium" for="nachricht">Nachricht</label>
+              <textarea id="nachricht" name="nachricht" rows="5" required class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+            </div>
+            <div class="sm:col-span-2 flex items-center gap-2 text-xs text-slate-500">
+              <input id="privacy" type="checkbox" required class="rounded border-slate-300" />
+              <label for="privacy">Ich habe die <a href="#rechtliches" class="text-brand-700 underline">Datenschutzhinweise</a> gelesen und akzeptiere sie.</label>
+            </div>
+          </div>
+          <button class="mt-4 w-full bg-brand-600 text-white px-4 py-3 rounded-2xl hover:bg-brand-700" type="submit">Nachricht senden</button>
+          <p id="formStatus" class="mt-3 text-sm"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rechtliches -->
+  <section id="rechtliches" class="py-16 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4">
+      <details class="p-5 rounded-2xl border border-slate-200">
+        <summary class="cursor-pointer font-semibold">Impressum & Datenschutz</summary>
+        <div class="mt-3 text-sm text-slate-700 space-y-3">
+          <p><strong>Anbieter:</strong> Stephan A. Hombergs, Musterstraße 1, 12345 Musterstadt, Deutschland</p>
+          <p><strong>Kontakt:</strong> hallo@example.com · +49 170 0000000</p>
+          <p><strong>USt‑IdNr.:</strong> DE123456789</p>
+          <p>Datenschutzhinweise: Es werden nur die für die Kontaktaufnahme notwendigen Daten verarbeitet. Es findet keine Weitergabe an Dritte statt, außer es ist zur Auftragsdurchführung erforderlich. Weitere Details auf Anfrage.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-600">
+      <div>© <span id="year"></span> Stephan A. Hombergs</div>
+      <div class="flex items-center gap-4">
+        <a class="hover:text-brand-700" href="#rechtliches">Impressum & Datenschutz</a>
+        <a class="hover:text-brand-700" href="mailto:hallo@example.com">E‑Mail</a>
+        <a class="hover:text-brand-700" href="tel:+491700000000">Telefon</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile-Menü
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    menuBtn?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+
+    // Form-Handling (ohne Backend): Mailto-Fallback
+    function handleSubmit(e) {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      const body = encodeURIComponent(
+        `Name: ${data.name}\nE-Mail: ${data.email}\nProjekt: ${data.projekt || '-'}\n\nNachricht:\n${data.nachricht}`
+      );
+      const mail = `mailto:hallo@example.com?subject=${encodeURIComponent('Neue Projektanfrage')}&body=${body}`;
+      window.location.href = mail;
+      const status = document.getElementById('formStatus');
+      status.textContent = 'Ihr E‑Mail‑Programm wurde geöffnet. Falls nichts passiert, schreiben Sie an hallo@example.com.';
+      status.className = 'mt-3 text-sm text-slate-600';
+    }
+
+    // Datum
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('de-DE');
+  </script>
+</body>
+</html>
